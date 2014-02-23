@@ -1,0 +1,32 @@
+% YOUR SOLUTION TO PROBLEM 1 GOES HERE
+% THE LATEX CODE YOU PUT HERE WILL BE INLINED (IF YOU NEED ADD ANY PACKAGES DO IT IN THE MAIN TEMPLATE FILE)
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[shorten >=2pt, auto, node distance=4 cm, scale = 1, transform shape]
+    
+\node[state, initial, accepting](q1) {$E_1$};
+\node[state, accepting] (q2) [right of=q1] {$E_2$};
+\node[state] (q3) [right of=q2] {$F$};
+\node[state] (q4) [below of=q1] {$O_1$};
+\node[state] (q5) [below of=q2] {$O_2$};
+
+\path[->] (q1) edge [bend right] node {0} (q4);
+\path[->] (q1) edge node [align=center] {1} (q2);
+
+\path[->] (q2) edge [bend right] node [align=left] {0} (q5);
+\path[->] (q2) edge  node [align=center] {1} (q3);
+
+
+\path[->] (q4) edge [bend right] node [align=center] {0} (q1);
+\path[->] (q4) edge node [align=center] {1} (q5);
+
+\path[->] (q3) edge [loop right] node [align=center] {0, 1} (q2);
+
+\path[->] (q5) edge [bend right] node [align=center] {0} (q2);
+\path[->] (q5) edge node [align=center] {1} (q3);
+
+\end{tikzpicture}
+\caption{Problem Set1 Machine}
+\end{figure}
+    
