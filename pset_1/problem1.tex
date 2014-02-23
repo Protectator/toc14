@@ -1,5 +1,7 @@
 % YOUR SOLUTION TO PROBLEM 1 GOES HERE
 % THE LATEX CODE YOU PUT HERE WILL BE INLINED (IF YOU NEED ADD ANY PACKAGES DO IT IN THE MAIN TEMPLATE FILE)
+This is a simple DFA. The $E$ states are reached with an even number of 0s while the $O$ states are reached with an odd number of 0s. Only the $E$ states are accepting.
+The first 1 in the input will switch from $E_1/O_1 to E_2/O_2$, and the second one will go to $F$, which is the failure state since more than one 1 has been detected. \\
 
 \begin{figure}[H]
 \centering
@@ -27,6 +29,6 @@
 \path[->] (q5) edge node [align=center] {1} (q3);
 
 \end{tikzpicture}
-\caption{Problem Set1 Machine}
+\caption{Problem 1 DFA}
 \end{figure}
     
