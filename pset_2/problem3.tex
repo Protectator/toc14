@@ -17,10 +17,12 @@ Let $L$ be a regular language. Let $half(L) := \{ x | \exists y : xy \in L, |x| 
 Let $M < Q, \Sigma, \delta, q_0, F>$ be a DFA that accepts $L$, which must exist because $L$ is regular. Supposing that $\hat \delta (q_0, x) = q_i$, i.e. the input $x$ leads $M$ to the state $q_i$, we must check if $\exists y : |y| = |x|$ that satisfies $\hat \delta (q_i, y) \in F$. 
 
 Let $S_n \subset Q$ be the set of states that lead to an accepting state for some input (not necessarily any input) of length n. 
-It is clear that for $x$ of length $n$ and $\hat \delta(q_0, x) = q_i$, $q_i \in S_n \rightarrow x \in \frac L 2$.  $(*)$
+It is clear that for $x$ of length $n$ and $\hat \delta(q_0, x) = q_i$, $q_i \in S_n \rightarrow x \in \frac L 2$.  $(*)$ \newline
+
 $S_0 = F$, since by definition of $S_n$ there are no more steps needed. $S_{n+1}$ can be easily computed from $S_n$ and $\delta$; it is the set of states that can transition to a state in $S_n$.
-We need a DFA that will keep track of $S_n$ as we go through $L$. Let $M'$ be a new DFA whose states are in $(Q, Q*)$ i.e. they're pairs of one state in $Q$ and a set of states in $Q$. The transition function $\delta'$ of $M'$ takes an input $x$ of length $n$ and yields $(\hat \delta(q_0, x), S_n)$.
-The start state of $M'$ is $(q_0, F)$, and the accepting states are $(q, S) \in (Q, Q^*)$ where $q \in S$; in common English, "the states reached after n inputs that can also reach an accepting state after n inputs". 
+We need a DFA that will keep track of $S_n$ as we go through $L$. Let $M'$ be a new DFA whose states are in $(Q, Q*)$ i.e. they're pairs of one state in $Q$ and a set of states in $Q$. The transition function $\delta'$ of $M'$ takes an input $x$ of length $n$ and yields $(\hat \delta(q_0, x), S_n)$. \newline
+
+The start state of $M'$ is $(q_0, F)$, and the accepting states are $(q, S) \in (Q, Q^*)$ where $q \in S$; in common English, "the states reached after n inputs that can also reach an accepting state after n inputs". \newline
 $(*)$ above allows us to show that $M'$ indeed accepts $half(L)$, and therefore $half(L)$ is regular.
 
 (source/inspiration for the $half(L)$ proof: \url{http://www-bcf.usc.edu/~breichar/teaching/2011cs360/half\%28L\%29example.pdf})
