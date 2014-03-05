@@ -1,0 +1,29 @@
+% YOUR SOLUTION TO PROBLEM 3 (IF THERE IS ONE) GOES HERE
+% THE LATEX CODE YOU PUT HERE WILL BE INLINED (IF YOU NEED ADD ANY PACKAGES DO IT IN THE MAIN TEMPLATE FILE)
+
+We haven proven in problem 2 that any regular Language can be inversed, and it will stay regular. Therefore if we can show that the language
+
+\begin{align*}
+\frac {L^R}{2}:=& \{x' \in \Sigma * | (yx)^R = x^R y^R \in L \text{for some } y' \text{ with } |x'| = |y'| \}
+\end{align*}
+
+is regular, its inverse $L/2$ will also be regular. So if we can prove that a DFA (or NFA) exists then with the result obtained from the second problem we have the required proof.
+Instead of proving:
+
+\begin{align*}
+\frac {L}{2} :=& \{x \in \Sigma * | \text{ for some y such that }|x| = |y|, xy \in L \}
+\end{align*}
+ 
+Let $L$ be a regular language. Let $\frac L 2 := \{ x | \exists y : xy \in L, |x| = |y| \}$. We want to prove that $\frac L 2$ is regular.
+
+Let $M < Q, \Sigma, \delta, q_0, F>$ be a DFA that accepts $L$, which must exist because $L$ is regular. Supposing that $\hat \delta (q_0, x) = q_i$, i.e. the input $x$ leads $M$ to the state $q_i$, we must check if $\exists y : |y| = |x|$ that satisfies $\hat \delta (q_i, y) \in F$. 
+
+Let $S_n \subset Q$ be the set of states that lead to an accepting state for some input (not necessarily any input) of length n. 
+It is clear that for $x$ of length $n$ and $\hat \delta(q_0, x) = q_i$, $q_i \in S_n \rightarrow x \in \frac L 2$. 
+$S_0 = F$ by definition of $S_n$ there are no more steps needed. $S_{n+1}$ can be easily computed from $S_n$ and $\delta$ it is the set of states that can transition to a state in $S_n$.
+We need a DFA that will keep track of $S_n$ as we go through $L$. Let $M'$ a new DFA whose states are in $(Q, Q*)$ i.e. they're pairs of one state in $M$ and a set of states in $M'$. The transition function $\delta'$ of $M'$ takes an input $x$ of length $n$ and yields $(\hat \delta(q_0, x), S_n)$.
+The start state of $M'$ is $(q_0, F)$, and the accepting states are $(q, S) \in (2, Q^*)$ where $q \in S$.
+
+In common English, "the states reached after n inputs that can also reach an accepting state after n inputs". $(*)$ above allows us to show that $M'$ indeed accepts $\frac L 2$, and therefore $\frac L 2$ is regular.
+
+source: \url{http://www-bcf.usc.edu/~breichar/teaching/2011cs360/half\%28L\%29example.pdf}

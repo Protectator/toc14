@@ -1,0 +1,48 @@
+% YOUR SOLUTION TO PROBLEM 1 GOES HERE
+% THE LATEX CODE YOU PUT HERE WILL BE INLINED (IF YOU NEED ADD ANY PACKAGES DO IT IN THE MAIN TEMPLATE FILE)
+
+
+A string in A cannot begin with a zero; it needs to switch to 1s eventually in order to have an even number of 1s, but "01" is banned. Also, since "01" is banned, all 1s must precede all 0s. Therefore, A can be redefined as the concatenation of
+
+\begin{align*}
+A_1 \subseteq \{1\}^* &:= \{ \omega \  |\  \omega \text{ contains an odd number of 1s} \} \\
+A_2 \subseteq \{0\}^* &:= \{ \omega \  | \  \omega \text{ contains an even number of 0s} \}. 
+\end{align*}
+
+Both $A_1$ and $A_2$ are regular, because we can construct the following DFAs for them:
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[shorten >=2pt, auto, node distance=4 cm, scale = 1, transform shape]
+    
+\node[state, initial](q1) {$q_1$};
+\node[state, accepting] (q2) [right of=q1] {$q_2$};
+
+\path[->] (q1) edge [bend left] node [align=center] {1} (q2);
+\path[->] (q1) edge [loop above] node [align=center] {0} (q1);
+
+\path[->] (q2) edge [bend left] node [align=center] {1} (q1);
+\path[->] (q2) edge [loop above] node [align=center] {0} (q2);
+
+\end{tikzpicture}
+\caption{DFA $A_1$}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[shorten >=2pt, auto, node distance=4 cm, scale = 1, transform shape]
+    
+\node[state, initial, accepting](q1) {$q_1$};
+\node[state] (q2) [right of=q1] {$q_2$};
+
+\path[->] (q1) edge [bend left] node [align=center] {0} (q2);
+\path[->] (q1) edge [loop above] node [align=center] {1} (q1);
+
+\path[->] (q2) edge [bend left] node [align=center] {0} (q1);
+\path[->] (q2) edge [loop above] node [align=center] {1} (q2);
+
+\end{tikzpicture}
+\caption{DFA $A_2$}
+\end{figure}
+
+Since A is the concatenation of two regular languages ($A_1 \circ A_2$), it is also regular as we saw in the class.
