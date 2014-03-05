@@ -3,9 +3,9 @@
 
 
 Since $L$ is regular, there is a DFA $M$ that can match $L$. Let us create an NFA $M'$ that can match $L^R$, which will prove that $L^R$ is regular.
-$M'$ is composed of all of $M$ states, plus one new state. This new state is the start state of the NFA, and it contains only $\epsilon$ transitions to all states that were accepting states of $M$. The accepting state of $M'$ is the start state of $M$. The transition function of $M'$ is the opposite of $M$ if an input $x$ caused $M$ to go from $q_0$ to $q_1$, now it causes $M'$ to go from $q_1$ to $q_0$.
+$M'$ is composed of all of $M$'s states, plus one new state. This new state is the start state of the NFA, and it contains only $\epsilon$ transitions to all states that were accepting states of $M$. The accepting state of $M'$ is the start state of $M$. The transition function of $M'$ is the opposite of $M$; if an input $x$ caused $M$ to go from $q_0$ to $q_1$, it causes $M'$ to go from $q_1$ to $q_0$.
 
-To express it more formal we have:
+To express it more formally:
 \begin{align*}
 M &= (Q, \Sigma, \delta, s, F) \\
 M' &= (Q', \Sigma, \delta;, s', F') \\
@@ -82,6 +82,6 @@ F' &= \{ s \} \\
 \end{figure}
 
 
-This new machine $'M$' will be able to read every word the original machine $'M'$ was able to read in the inverse direction. As for every word the $M$ was able to read we ended up in one of the accepting states to which we can transition to at no cost ($\epsilon$) and therefore we will end up after the reverse read of the word in the initial state of $M$ meaning in the accepting state of $M'$
+This new machine $M'$ will be able to read every word the original machine $M$ was able to read, in the opposite direction; indeed, for every word $M$ was able to read it ended up in one of the accepting states to which $M'$ can transition to at no cost ($\epsilon$) from the start and therefore will end up after the reverse read of the word in the initial state of $M$, meaning in the accepting state of $M'$.
 
 
