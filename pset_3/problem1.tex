@@ -9,6 +9,33 @@ b) Again, by the pigeonhole principle, there has to exist a $k$ and a $k'$ such 
 But if the $y$ that follows has $Y$ 1s where $k < Y < k'$, $k$ 1s followed by $y$ must be rejected while $k'$ 1s followed by $y$ must be accepted.
 This is not possible, we cannot build such a DFA, therefore $L_2$ is irregular. \\
 
-c) \textit{Bis repetita placent?} By the pigeonhole principle, there has to exist a $k$ and a $k'$ such that a DFA recognizing $L_3$ cannot distinguish between $k$ 1s and $k'$ 1s. 
-But if the $y$ that follows has $Y$ 1s where $k < Y < k'$, $k$ 1s followed by $y$ must be accepted while $k'$ 1s followed by $y$ must be rejected.
-This is not possible, we cannot build such a DFA, therefore $L_3$ is irregular.
+c) Same as... oh, wait, it's actually not the same thing, there's a trick!
+We can freely move 1s from the prefix to the last part, and the last part can match a lot of things. $L_3$ is equivalent to $L_3' := \{ 1y' | y' contains at least one 1 \}$. Let's prove it.
+$L_3'$ is trivially a subset of $L_3$ since it's equivalent to $L_3 with k = 1$.
+$L_3$ is a subset of $L_3'$: the prefix in $L_3$ can be "split" into two parts: one 1, and zero or more 1s. The first part corresponds to the prefix in $L_3'$, the second part is absorbed into $y'$.
+Since $y$ contains at least $k$ 1s and $k >= 1$, the condition for $y'$ (at least one 1) is met. Thus, surprisingly, $L_3$ is a subset of $L_3'$.
+Since $L_3$ is a subset of $L_3'$ and vice-versa, $L_3 = L_3'$.
+$L_3'$ - in English, the set of words beginning by 1 and containing another 1 somewhere - is regular, here's a DFA that matches it:
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[shorten >=2pt, auto, node distance=4 cm, scale = 1, transform shape]
+    
+\node[state, initial](q0) {$q0$};
+\node[state] (q1) [right of=q0] {$q1$};
+\node[state, accepting] (q2) [right of=q1] {$q2$};
+\node[state] (q3) [below of=q1] {$q3$};
+
+\path[->] (q0) edge node {0} (q3);
+\path[->] (q0) edge node [align=center] {1} (q1);
+
+\path[->] (q1) edge [loop above] node {0} (q1);
+\path[->] (q1) edge node [align=center] {1} (q2);
+
+\path[->] (q2) edge [loop above] node {0, 1} (q2);
+
+\path[->] (q3) edge [loop right] node {0, 1} (q3);
+
+\end{tikzpicture}
+\caption{Problem 1c DFA}
+\end{figure}
