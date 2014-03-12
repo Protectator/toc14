@@ -10,8 +10,8 @@ But if the $y$ that follows has $Y$ 1s where $k < Y < k'$, $k$ 1s followed by $y
 This is not possible, we cannot build such a DFA, therefore $L_2$ is irregular. \\
 
 c) Same as... oh, wait, it's actually not the same thing, there's a trick!
-We can freely move 1s from the prefix to the last part, and the last part can match a lot of things. $L_3$ is equivalent to $L_3' := \{ 1y' | y' contains at least one 1 \}$. Let's prove it.
-$L_3'$ is trivially a subset of $L_3$ since it's equivalent to $L_3 with k = 1$.
+We can freely move 1s from the prefix to the last part, and the last part can match a lot of things. $L_3$ is equivalent to $L_3' := \{ 1y'\ |\ y'\ contains\ at\ least\ one\ 1 \}$. Let's prove it.
+$L_3'$ is trivially a subset of $L_3$ since it's equivalent to $L_3\ with\ k\ =\ 1$.
 $L_3$ is a subset of $L_3'$: the prefix in $L_3$ can be "split" into two parts: one 1, and zero or more 1s. The first part corresponds to the prefix in $L_3'$, the second part is absorbed into $y'$.
 Since $y$ contains at least $k$ 1s and $k >= 1$, the condition for $y'$ (at least one 1) is met. Thus, surprisingly, $L_3$ is a subset of $L_3'$.
 Since $L_3$ is a subset of $L_3'$ and vice-versa, $L_3 = L_3'$.
