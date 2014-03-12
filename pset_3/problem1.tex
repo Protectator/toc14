@@ -1,8 +1,14 @@
 % YOUR SOLUTION TO PROBLEM 1 GOES HERE
 % THE LATEX CODE YOU PUT HERE WILL BE INLINED (IF YOU NEED ADD ANY PACKAGES DO IT IN THE MAIN TEMPLATE FILE)
 
-a) Let's start by assuming that $x_1$ = $y^r$. Therefore we know that by the pigeonhole principle, there has to be an $x_2$ != $y^r$ with $x_2$ != $x_1$ as there is a finite number of states for an infinite number of combinations. Therefore, we have somewhere collisions, which makes our DFA unable of both rejecting palindromes and accepting all non-palindromes.\\
+a) Let z be a word in ${0, 1}*$, and $z^R$ its reverse. $L_1$ must not include $zz^R$ since $(zz^R)^R = zz^R$. 
+But, by the pigeonhole principle, there has to be a $z'$ != $z$ such that a DFA for $L_1$ cannot distinguish between $z$ and $z'$. 
+This means that a DFA is unable of both rejecting all palindromes (including $zz^R$) and accepting all non-palindromes (including $z'z^R$), therefore $L_1$ must be irregular. \\
 
-b) By the pigeonhole principle, there has to exist a k' such that a DFA is in the same state after k 1's and k' 1's but then one of them can be accepted because the y that follows has A 1's where $k < A < k'$. That means that one of them has to be refused while the other has to be accepted, which is not possible with a DFA. \\
+b) Again, by the pigeonhole principle, there has to exist a $k'$ such that a DFA recognizing $L_2$ cannot distinguish between $k$ 1s and $k'$ 1s. 
+But if the $y$ that follows has $Y$ 1s where $k < Y < k'$, $k$ 1s followed by $y$ must be rejected while $k'$ 1s followed by $y$ must be accepted.
+This is not possible, we cannot build such a DFA, therefore $L_2$ is irregular. \\
 
-c) For this one, we assume that $x_1$ has enough 1's and $x_2$ hasn't. As this need to be true for every $k > 1$ we can assume that there is a k for which we will find a collision of the two x's. These would therefore lead to the same state. We can therefore not build a DFA for this one either
+c) \textit{Bis repetita placent?} By the pigeonhole principle, there has to exist a $k'$ such that a DFA recognizing $L_3$ cannot distinguish between $k$ 1s and $k'$ 1s. 
+But if the $y$ that follows has $Y$ 1s where $k < Y < k'$, $k$ 1s followed by $y$ must be accepted while $k'$ 1s followed by $y$ must be rejected.
+This is not possible, we cannot build such a DFA, therefore $L_3$ is irregular.
