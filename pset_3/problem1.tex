@@ -1,14 +1,14 @@
 % YOUR SOLUTION TO PROBLEM 1 GOES HERE
 % THE LATEX CODE YOU PUT HERE WILL BE INLINED (IF YOU NEED ADD ANY PACKAGES DO IT IN THE MAIN TEMPLATE FILE)
 
-a) Let z be a word in ${0, 1}*$, and $z^R$ its reverse. $L_1$ must not include $zz^R$ since $(zz^R)^R = zz^R$. 
+a) Let z be a word in $\{0, 1\}*$, and $z^R$ its reverse. $L_1$ must not include $zz^R$ since $(zz^R)^R = zz^R$. 
 But, by the pigeonhole principle, there has to be a $z'$ != $z$ such that a DFA for $L_1$ cannot distinguish between $z$ and $z'$. 
 This means that a DFA is unable of both rejecting all palindromes (including $zz^R$) and accepting all non-palindromes (including $z'z^R$), therefore $L_1$ must be irregular. \\
 
-b) Again, by the pigeonhole principle, there has to exist a $k'$ such that a DFA recognizing $L_2$ cannot distinguish between $k$ 1s and $k'$ 1s. 
+b) Again, by the pigeonhole principle, there has to exist a $k$ and a $k'$ such that a DFA recognizing $L_2$ cannot distinguish between $k$ 1s and $k'$ 1s. 
 But if the $y$ that follows has $Y$ 1s where $k < Y < k'$, $k$ 1s followed by $y$ must be rejected while $k'$ 1s followed by $y$ must be accepted.
 This is not possible, we cannot build such a DFA, therefore $L_2$ is irregular. \\
 
-c) \textit{Bis repetita placent?} By the pigeonhole principle, there has to exist a $k'$ such that a DFA recognizing $L_3$ cannot distinguish between $k$ 1s and $k'$ 1s. 
+c) \textit{Bis repetita placent?} By the pigeonhole principle, there has to exist a $k$ and a $k'$ such that a DFA recognizing $L_3$ cannot distinguish between $k$ 1s and $k'$ 1s. 
 But if the $y$ that follows has $Y$ 1s where $k < Y < k'$, $k$ 1s followed by $y$ must be accepted while $k'$ 1s followed by $y$ must be rejected.
 This is not possible, we cannot build such a DFA, therefore $L_3$ is irregular.
