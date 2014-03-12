@@ -1,7 +1,7 @@
 % YOUR SOLUTION TO PROBLEM 2 GOES HERE
 % THE LATEX CODE YOU PUT HERE WILL BE INLINED (IF YOU NEED ADD ANY PACKAGES DO IT IN THE MAIN TEMPLATE FILE)
 
-a) The start state of our DFA is a state which can go to itself on any input, or go on a 0 to a second state in a bloc of K states with each state going to the next one on any input (0 or 1), and the last one is the accepting state and has no transitions.
+a) The start state of our DFA is a state which can go to itself on any input, or go on a 0 to a second state that belongs to a bloc of K states, with each state going to the next one on any input (0 or 1), and a last state that is accepting and has no transitions.
 
 \begin{figure}[H]
 \centering
@@ -21,5 +21,6 @@ a) The start state of our DFA is a state which can go to itself on any input, or
 \caption{DFA $A$}
 \end{figure}
 
-b) Let us consider the set K of all words of length $k+1$ in ${0,1}*$. We want to prove that all of these words are pairwise distinguishable by L. Let $w_1$, $w_2$ be two different words in $K$. Since they are different, there has to be at least one bit that is not the same between them, which also implies that one of these words will have a $0$ where the other has a $1$. Let's say $w_1$ is the one with a $0$ and $w_2$ the one with a $1$, and the last change bit is named $B$. We can construct a suffix $u$ of length $X$ (whether its bits are 0 or 1 doesn't matter), where $X$ is $k - <number of bits after B in w_1>$ (thus $0 <= X <= k$).
-This means that $w_1u$ will be accepted while $w_2u$ will be refused, therefore $w_1$ and $w_2$ are distinguishable by L. We juste proved that there exists a set $K$ of $2^{(k+1)}$ words which are pairwise distinguishable by L. By Theorem 1, we conclude that any DFA that implements L has to have $>= 2^{(k+1)}$ states.
+b) Let us consider the set $K$ of all words of length $k+1$ in ${0,1}*$. We want to prove that all of these words are pairwise distinguishable by $L_k$. Let $w_1$, $w_2$ be two different words in $K$. Since they are different, there has to be at least one bit that is not the same between them, which also implies that one of these words will have a $0$ where the other has a $1$. Let's say $w_1$ is the one with a $0$ and $w_2$ the one with a $1$, and the last change bit is named $B$. We can construct a suffix $u$ of length $X$ (whether its bits are 0 or 1 doesn't matter), where $X$ is $k - (number of bits after B in w_1)$ (thus $0 <= X <= k$).
+This means that $w_1u$ will be accepted while $w_2u$ will be refused, therefore $w_1$ and $w_2$ are distinguishable by L.
+We juste proved that there exists a set $K$ of $2^{(k+1)}$ words which are pairwise distinguishable by $L_k$. Using Theorem 1, we conclude that any DFA that implements $L_k$ has to have at least $2^{(k+1)}$ states.
