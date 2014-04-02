@@ -1,14 +1,14 @@
-\documentclass[a4paper,11pt,twoside]{article}
+\documentclass[a4paper,11pt]{article}
 %
 % HOW TO USE THIS TEMPLATE:
 %
 % MODIFY THE VALUE BELOW TO MAKE IT REFLECT THE CURRENT PROBLEM SET NUMBER
 % (FOR EXAMPLE, FOR PROBLEM SET XX, THE LINE BELOW SHOULD BE: \def\mynumber{XX})
-  \def\mynumber{3}
+  \def\mynumber{4}
 % 
 % MODIFY THE VALUE BELOW TO MAKE IT REFLECT THE NUMBER OF PROBLEMS IN THE CURRENT PROBLEM SET
 % (FOR EXAMPLE, IF THE CURRENT PROBLEM SET CONTAINS YY PROBLEMS, THE LINE BELOW SHOULD BE: \def\myproblemsnbr{YY})
-  \def\myproblemsnbr{2}
+  \def\myproblemsnbr{3}
 %
 %
 %
@@ -40,8 +40,6 @@
 %
 % IF ADDITIONAL PACKAGES ARE NEEDED, UNCOMMENT LINE BELOW
 % AND ENTER THE PACKAGE NAMES
-%  \usepackage{additional_package_1,additional_package_2}
-
 \usepackage{tikz}
 \usepackage{booktabs}
 \usepackage{float}
@@ -49,14 +47,7 @@
 \usepackage{amsmath}
 \usepackage{array}
 \usetikzlibrary{automata, arrows}
-\usetikzlibrary{shapes,shapes.geometric,arrows,fit,calc,positioning,automata,}\usepackage{tikz}
-\usepackage{booktabs}
-\usepackage{float}
-\usepackage{ amssymb }
-\usepackage{amsmath}
-\usepackage{array}
-\usetikzlibrary{automata, arrows}
-\usetikzlibrary{shapes,shapes.geometric,arrows,fit,calc,positioning,automata,}
+
 
 % DO NOT MODIFY ANYTHING BELOW THIS LINE
 %%%%%
@@ -182,7 +173,7 @@
 \addtocounter{problems}{-1}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\cleardoublepage
+\newpage
 \begin{flushleft}
   \addtocounter{problem}{1}
   \large\sf Problem \theproblem .
@@ -195,7 +186,7 @@
 \ifthenelse{\equal{\theproblems}{0}}
 {}%
 {%
-\cleardoublepage
+\newpage
 \begin{flushleft}
   \addtocounter{problem}{1}
   \large\sf Problem \theproblem .
@@ -208,7 +199,7 @@
 \ifthenelse{\equal{\theproblems}{0}}
 {}%
 {%
-\cleardoublepage
+\newpage
 \begin{flushleft}
   \addtocounter{problem}{1}
   \large\sf Problem \theproblem .
@@ -221,7 +212,7 @@
 \ifthenelse{\equal{\theproblems}{0}}
 {}%
 {%
-\cleardoublepage
+\newpage
 \begin{flushleft}
   \addtocounter{problem}{1}
   \large\sf Problem \theproblem .
@@ -247,7 +238,7 @@
 \ifthenelse{\equal{\theproblems}{0}}
 {}%
 {%
-\cleardoublepage
+\newpage
 \begin{flushleft}
   \addtocounter{problem}{1}
   \large\sf Problem \theproblem .
@@ -260,7 +251,7 @@
 \ifthenelse{\equal{\theproblems}{0}}
 {}%
 {%
-\cleardoublepage
+\newpage
 \begin{flushleft}
   \addtocounter{problem}{1}
   \large\sf Problem \theproblem .
