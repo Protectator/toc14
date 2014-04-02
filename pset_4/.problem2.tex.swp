@@ -2,4 +2,6 @@
 % THE LATEX CODE YOU PUT HERE WILL BE INLINED (IF YOU NEED ADD ANY PACKAGES DO IT IN THE MAIN TEMPLATE FILE)
 
 
-Let's take the Turing-Machine recognizing C. And modify it to stop after x, not reading the rest of the input. As the language can recognize and decide C, it can decide a subset of it, as there is no loop. Therefore R is Turing-Recognizable
+Let's take the Turing-Machine recognizing C. And modify it to stop after x, not reading the rest of the input. As the language can recognize and decide C, it can decide a substring of C, as there is no loop. Therefore R is Turing-Recognizable.
+
+As a decidable language is a subset of a recognizable language, if we can decide on a substring of an input of C, we can decide the substring.
