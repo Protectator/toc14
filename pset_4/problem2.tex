@@ -1,6 +1,5 @@
 % YOUR SOLUTION TO PROBLEM 2 GOES HERE
 % THE LATEX CODE YOU PUT HERE WILL BE INLINED (IF YOU NEED ADD ANY PACKAGES DO IT IN THE MAIN TEMPLATE FILE)
 
-For a language to be recognizable, it has to never loop, and end once on a given state with a given input. Therefore if we only take a subset of the word, which is x, or y, and end at the separator, dropping everything after for x. Or not caring about the first input for y. Therefore as the whole word does not loop, a subset of it won't loop and therefore finish in a given state. That it the definition of a decidable language. Therefore R is Turing-Recognizable.
 
 Let's take the Turing-Machine recognizing C. And modify it to stop after x, not reading the rest of the input. As the language can recognize and decide C, it can decide a subset of it, as there is no loop. Therefore R is Turing-Recognizable

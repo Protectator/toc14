@@ -5,6 +5,6 @@
 
 2) Convert A' to a DFA A'' (using techniques we saw in class) \\
 
-3) Compare A and A'' (using the technique we saw in calss, section 2.3 of lecture notes 5) \\
+3) Compare A and A'' (using the technique we saw in class, section 2.3 of lecture notes 5) \\
 
 4) If they accept the same entries, accept, else reject.
