@@ -1,4 +1,3 @@
 % YOUR SOLUTION TO PROBLEM 3 (IF THERE IS ONE) GOES HERE
 % THE LATEX CODE YOU PUT HERE WILL BE INLINED (IF YOU NEED ADD ANY PACKAGES DO IT IN THE MAIN TEMPLATE FILE)
 
-Let C be x,y where x is anything, y is empty, and the separator is encoded as the empty string. Then all x in R have an y such that x,y is in C.
