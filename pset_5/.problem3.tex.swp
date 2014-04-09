@@ -1,3 +1,11 @@
 % YOUR SOLUTION TO PROBLEM 3 (IF THERE IS ONE) GOES HERE
 % THE LATEX CODE YOU PUT HERE WILL BE INLINED (IF YOU NEED ADD ANY PACKAGES DO IT IN THE MAIN TEMPLATE FILE)
 
+We now that the language of $REG_{TM}$ is infinite but countable, and undecidable.
+We now the set \{0\}* is infinite too but also countable. As the set \{0\}* is countable and infinite, we can take a subset of it (or all of it) which is infinite and countable to be our language.
+
+As both $REG_{TM}$ and our language are countable, it is possible to create a bijection, reducing each word from the set $REG_{TM}$ to one word in our language in \{0\}*.
+
+Therefore, if our language is decidable, we could use it to map a decidable version of $REG_{TM}$. As we saw in class that $REG_{TM}$ is not decidable, that cannot be.
+
+Therefore there exist a language in \{0\}* which is undecidable
