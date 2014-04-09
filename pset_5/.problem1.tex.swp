@@ -1,0 +1,10 @@
+% YOUR SOLUTION TO PROBLEM 1 GOES HERE
+% THE LATEX CODE YOU PUT HERE WILL BE INLINED (IF YOU NEED ADD ANY PACKAGES DO IT IN THE MAIN TEMPLATE FILE)
+
+a) Construct the DFA $M_{diff}$ out of the DFAs M_1 and M_2 (symmetric difference)
+
+b) Construct the DFA $M_{union}$ out of the DFAs M_1 and M_2 (union)
+
+c) Check if they are equal (as seen in lecture 5)
+
+d) Reject if they are, otherwise accept.
