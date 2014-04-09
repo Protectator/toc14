@@ -14,4 +14,4 @@ Let us assume that R is recognizable. Then we could build a Turing machine for $
 
 5) If 1w is rejected, w is in $A_{TM}$
 
-6) 0w and 1w cannot both cause halting, because either w is in $A_{TM}$ (thus, by the definition of recognizability, R must accept 0w, and may reject or halt on 1w), or w is not in $A_{TM}$ (thus R must accept 1w, and may reject or halt on 0w)
+6) 0w and 1w cannot both cause halting, because either w is in $A_{TM}$ (thus, by the definition of recognizability, R must accept 0w, and may reject or halt on 1w), or w is not in $A_{TM}$ (thus R must accept 1w, and may reject or halt on 0w). Therefore $A_{TM}$ is decidable. Since we know that $A_{TM}$ is not decidable, our assumption is wrong and R is not recognizable.
