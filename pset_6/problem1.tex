@@ -1,10 +1,10 @@
 % YOUR SOLUTION TO PROBLEM 1 GOES HERE
 % THE LATEX CODE YOU PUT HERE WILL BE INLINED (IF YOU NEED ADD ANY PACKAGES DO IT IN THE MAIN TEMPLATE FILE)
 
-As a DFA only accepts $\Sigma^*$ if all reacheable states from $q_0$ are accepting ones. Thus, we can make a breadth (or depth) first search on these states, while remembering the one visited, to avoid loops and know when to stop.
+As a DFA only accepts $\Sigma^*$ if all reacheable states from $q_0$ are accepting ones, we can make a breadth (or depth) first search on these states, while remembering the one visited, to avoid loops and know when to stop.
 
 If ever a non accepting state is found, reject. Else accept.
 
-Therefore, as a Depth or Breadth first search is in Polynomial time, and the rest is in constant time, our whole algorithm runs in Polynomial time.
+Therefore, as a depth or breadth first search is in Polynomial time, and the rest is in constant time, our whole algorithm runs in Polynomial time.
 
 Therefore $ALL_{DFA} \in P$
