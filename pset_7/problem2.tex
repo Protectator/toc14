@@ -16,8 +16,8 @@ if any clause is empty and the loop isn't finished, the formula is not satisfiab
 if the loop finishes, the formula is satisfiable.\\\\
 
 
-We always remove clauses that can be trivially satsfied: the ones with unique variables (just set that variable to true or false), the ones with the same variable twice (which means it doesn't appear elsewhere), and the ones with literals that appear twice (which means the opposite literal doesn't appear, so we can set the variable to true or false).\\
+We always remove clauses that can be trivially satisfied: the ones with unique variables (just set that variable to true or false), the ones with the same variable twice (which means it doesn't appear elsewhere), and the ones with literals that appear twice (which means the opposite literal doesn't appear, so we can set the variable to true or false).\\
 
 Then we reduce the formula step by step. The principle is simple: if there are clauses of the form "$x\ or\ Y$" and "$not(x)\ or\ Z$", they are equivalent to one bigger clause "$Y\ or\ Z$" since either x is false and Y needs to be true, or not(x) is false and $Z$ needs to be true.\\
 
-f we find an empty clause before the end of the loop, we abort because empty clauses are not satisfiable.
+If we find an empty clause before the end of the loop, we abort because empty clauses are not satisfiable.
