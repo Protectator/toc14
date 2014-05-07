@@ -2,6 +2,6 @@
 % THE LATEX CODE YOU PUT HERE WILL BE INLINED (IF YOU NEED ADD ANY PACKAGES DO IT IN THE MAIN TEMPLATE FILE)
 
 Let us prove that \textit{TWICE\_SAT} is NP-complete by reducing 3SAT to it.
-Given a 3CNF formula $\phi$ with $k$ variables, we create the formula $\phi' := \phi ^ (x_(k+1) v not(x_(k+1))$.
-Clearly, if $\phi$ has at least one satisfying assignment, $\phi'$ must have at least two satisfying assignment, one where $x_(k+1)$ is true and one where it is false.
+Given a 3CNF formula $\phi$ with $k$ variables, we create the formula $\phi' := \phi ^ (x_{(k+1)}\ v\ not\ (x_{(k+1)})$.
+Clearly, if $\phi$ has at least one satisfying assignment, $\phi'$ must have at least two satisfying assignment, one where $x_{(k+1)}$ is true and one where it is false.
 Therefore, \textit{TWICE\_SAT} can be reduced to 3SAT, which means \textit{TWICE\_SAT} is NP-complete.
