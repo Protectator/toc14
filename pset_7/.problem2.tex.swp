@@ -1,0 +1,18 @@
+% YOUR SOLUTION TO PROBLEM 2 GOES HERE
+% THE LATEX CODE YOU PUT HERE WILL BE INLINED (IF YOU NEED ADD ANY PACKAGES DO IT IN THE MAIN TEMPLATE FILE)
+Let us define our algorithm this way :\\\\
+loop for each variable $x$:\
+
+remove all clauses containing variables that only appear once	\\
+
+remove all clauses containing literals that appear twice (in the entire formula)\\
+
+remove all clauses containing variables that appear twice in the clause\\
+
+find clauses $c_1$ and $c_2$ such that $c_1 = X\ OR\ Y and c_2 =\ not(x)\ OR\ Z$ for some $Y,Z$ (clauses)\\
+
+if $c_1$ and $c_2$ exist, remove $c_1$ and $c_2$, add $c_3 :=\ Y\ OR\ Z$\\
+
+if any clause is empty and the loop isn't finished, the formula is not satisfiable.\\
+
+if the loop finishes, the formula is satisfiable.
