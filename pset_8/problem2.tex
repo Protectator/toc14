@@ -1,6 +1,6 @@
 % YOUR SOLUTION TO PROBLEM 2 GOES HERE
 % THE LATEX CODE YOU PUT HERE WILL BE INLINED (IF YOU NEED ADD ANY PACKAGES DO IT IN THE MAIN TEMPLATE FILE)
 
-The shortest path is easy to find in polynomial time using e.g. Dijstra's algorithm. Checking if this path is shorter than k is also done in polynomial time. So we can say that $SHORT\_PATH$ is in P.\\
+The shortest path is easy to find in polynomial time using e.g. Dijkstra's algorithm. Checking if this path is shorter than k is also done in polynomial time. So we can say that $SHORT\_PATH$ is in P.\\
 
 $LONG\_PATH$ is in NP because we can check in polynomial time that it is a path and that its length is greater than or equal to k. If we take a special case of $LONG\_PATH$ that is an Hamiltonian Path where k is equal to the number of vertices minus 1, we can conclude that $LONG\_PATH$ is NP-complete as we know that finding an Hamiltonian path is NP-complete.
