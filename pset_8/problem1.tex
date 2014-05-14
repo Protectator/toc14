@@ -1,0 +1,24 @@
+% YOUR SOLUTION TO PROBLEM 1 GOES HERE
+% THE LATEX CODE YOU PUT HERE WILL BE INLINED (IF YOU NEED ADD ANY PACKAGES DO IT IN THE MAIN TEMPLATE FILE)
+
+For all edges $(a,b)$ in a spread set $S$, either $a \in S\ \&\ b \notin S\ or\ b \in S\ \&\ a \notin S\ or\ a \notin S\ \&\ b \notin S$. In other words, at most one of $(a,b)$ is in S.\\
+
+Let's take the complement of a spread set, for each case:
+
+$a \in S\ \&\ b \notin S\ ->\ a \notin S\ \&\ b \in S$
+
+$a \notin S\ \&\ b \in S\ ->\ a \in S\ \&\ b \notin S$
+
+$a \notin S\ \&\ b \notin S\ ->\ a \in S\ \&\ b \in S$\\
+
+In all three cases, at least one of $(a,b)$ is in S. This is the definition of a vertex cover.\\
+
+This means that $SPREAD\_SET$ can be rephrased in the following way:
+
+Given a graph $G$ of size $n$ and a size $k$:
+
+1) Find a vertex cover for G of size $(n-k)$
+
+2) Take the complement of that vertex cover.\\
+
+Step 2 is obviously polynomial, therefore $VERTEX\_COVER$ can be reduced to $SPREAD\_SET$. Since $VERTEX\_COVER$ is NP-complete, $SPREAD\_SET$ must also be NP-complete
